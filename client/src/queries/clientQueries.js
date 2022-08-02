@@ -21,5 +21,4 @@ const GET_AUTHORS = gql`
   }
 `;
 
-
 export { GET_AUTHORS, GET_BOOKS};
