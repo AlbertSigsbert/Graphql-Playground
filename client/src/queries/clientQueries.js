@@ -10,7 +10,6 @@ const GET_BOOKS = gql`
   }
 `;
 
-
 const GET_AUTHORS = gql`
   query GetAuthors {
     authors {
@@ -21,4 +20,23 @@ const GET_AUTHORS = gql`
   }
 `;
 
-export { GET_AUTHORS, GET_BOOKS};
+const GET_BOOK = gql`
+  query ($id: ID) {
+    book(id: $id) {
+      name
+      genre
+      id
+      author{
+        name
+        age
+        id
+        books{
+          name
+          id
+        }
+      }
+    }
+  }
+`;
+
+export { GET_AUTHORS, GET_BOOKS, GET_BOOK};
